@@ -1,5 +1,5 @@
 <x-layout class="bg-danger" style="--bs-bg-opacity: .5;">
-    <form method="POST" action="/listings" class="row g-3 border rounded-3 m-4 p-3"
+    <form method="POST" action="/listings" enctype="multipart/form-data" class="row g-3 border rounded-3 m-4 p-3"
         style="--bs-bg-opacity: .8; background-color: #f5e5e5">
         @csrf
         <div class="container text-center">
@@ -53,10 +53,13 @@
                 <i class="text-danger mt-1">{{$message}}</i>
             @enderror    
         </div>
-        {{-- <div class="input-group mb-3">
+        <div class="input-group mb-3">
             <input name="logo" type="file" class="form-control" id="inputGroupFile02">
             <label class="input-group-text" for="inputGroupFile02">Upload</label>
-        </div> --}}
+            @error('logo')
+                <i class="text-danger mt-1">{{$message}}</i>
+            @enderror    
+        </div>
         <div class="my-2">
             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
             <textarea name="description" value="{{old('description')}}" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
