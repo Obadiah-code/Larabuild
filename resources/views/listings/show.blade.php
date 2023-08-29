@@ -18,12 +18,12 @@
                         class="my-3 row-lg col-12 mx-3 btn btn-primary" style="--bs-bg-opacity: .8">
                         <i class="fa-solid fa-pencil"></i> edit
                     </a>
-                    <form action="/listings/{{$listing->id}}">
+                    <form method="POST" action="/listings/{{$listing->id}}">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" href="{{$listing['website']}}" target="_blank"
-                            class="my-3 row-lg col-12 mx-3 btn btn-dark" style="--bs-bg-opacity: .8">
-                            <i class="fa-solid fa-globe"></i> Delete</button>
+                        <button
+                            class="my-3 row-lg col-12 mx-3 btn btn-secondary" style="--bs-bg-opacity: .8">
+                            <i class="fa-solid fa-trash"></i> Delete</button>
 
                     </form>
             </div>
