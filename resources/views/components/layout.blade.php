@@ -23,8 +23,19 @@
             </button>
             <div class="collapse navbar-collapse ms-3 justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link mx-2" href="/register">Register</a>
-                    <a class="nav-link mx-2" href="/login">Login</a>
+                    @auth
+                        <a class="nav-link mx-2" href="#">Welcome {{auth()->user()->name}}</a>
+                        <a class="nav-link mx-2" href="/listings/manage"><i class="fa-solid fa-gear"></i> Manage Listings</a>
+                        <form class="" action="POST" action="/logout">
+                            @csrf
+                            <button type="submit" class="btn">
+                                <i class="fa-solid fa-door-closed"></i> Logout
+                            </button>
+                        </form>
+                    @else
+                        <a class="nav-link mx-2" href="/register">Register</a>
+                        <a class="nav-link mx-2" href="/login">Login</a>
+                    @endauth
                 </div>
             </div>
         </div>

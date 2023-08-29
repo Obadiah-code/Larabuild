@@ -1,5 +1,5 @@
 <x-layout class="bg-danger" style="--bs-bg-opacity: .5;">
-    <form method="POST" action="/listings" enctype="multipart/form-data" class="row g-3 border rounded-3 m-4 p-3"
+    <form method="POST" action="/users" enctype="multipart/form-data" class="row g-3 border rounded-3 m-4 p-3"
         style="--bs-bg-opacity: .8; background-color: #f5e5e5">
         @csrf
         <div class="container text-center">
@@ -32,8 +32,8 @@
         </div>
         <div class="row my-2">
             <label for="inputAddress2" class="form-label">Confirm password</label>
-            <input name="password_confirm" value="{{old('password_confirm')}}" type="password" class="form-control" id="inputAddress2">
-            @error('password_confirm')
+            <input name="password_confirmation" value="{{old('password_confirmation')}}" type="password" class="form-control" id="inputAddress2">
+            @error('password_confirmation')
                 <i class="text-danger mt-1">{{$message}}</i>
             @enderror
         </div>
