@@ -23,8 +23,8 @@
             </button>
             <div class="collapse navbar-collapse ms-3 justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link mx-2" href="#">Register</a>
-                    <a class="nav-link mx-2" href="#">Login</a>
+                    <a class="nav-link mx-2" href="/register">Register</a>
+                    <a class="nav-link mx-2" href="/login">Login</a>
                 </div>
             </div>
         </div>
