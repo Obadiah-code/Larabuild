@@ -9,7 +9,7 @@
 
         <div class="row my-3">
             <label for="inputEmail4" class="form-label">Job Title</label>
-            <input name="title" type="text" placeholder="ex: seignor Laravel" class="form-control" id="inputEmail4">
+            <input name="title" value="{{old('title')}}" type="text" placeholder="ex: seignor Laravel" class="form-control" id="inputEmail4">
             @error('title')
                 <i class="text-danger mt-1">{{$message}}</i>
             @enderror
@@ -17,7 +17,7 @@
 
         <div class="row my-2">
             <label for="inputEmail4" class="form-label">Company Name</label>
-            <input name="company" type="text" class="form-control" id="inputEmail4">
+            <input name="company" value="{{old('company')}}" type="text" class="form-control" id="inputEmail4">
             
             @error('company')
                 <i class="text-danger mt-1">{{$message}}</i>
@@ -25,21 +25,21 @@
         </div>
         <div class="row my-2">
             <label for="inputAddress" class="form-label">Job Location</label>
-            <input name="location" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input name="location" value="{{old('location')}}" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
             @error('location')
                 <i class="text-danger mt-1">{{$message}}</i>
             @enderror
         </div>
         <div class="row my-2">
             <label for="inputAddress2" class="form-label">Website/Application Url</label>
-            <input name="website" type="url" class="form-control" id="inputAddress2" placeholder="">
+            <input name="website" value="{{old('website')}}" type="url" class="form-control" id="inputAddress2" placeholder="">
             @error('website')
                 <i class="text-danger mt-1">{{$message}}</i>
             @enderror
         </div>
         <div class="row my-2">
             <label for="inputCity" class="form-label">Tags(comma separeted)</label>
-            <input name="tags" type="text" class="form-control" placeholder="Apartment, studio, or floor"
+            <input name="tags" value="{{old('tags')}}" type="text" class="form-control" placeholder="Apartment, studio, or floor"
                 id="inputCity">
             @error('tags')
                 <i class="text-danger mt-1">{{$message}}</i>
@@ -47,7 +47,7 @@
         </div>
         <div class="row my-2">
             <label for="inputCity" class="form-label">Email</label>
-            <input name="email" type="text" class="form-control" placeholder="name@title.com"
+            <input name="email" value="{{old('email')}}" type="text" class="form-control" placeholder="name@title.com"
                 id="inputCity">
             @error('email')
                 <i class="text-danger mt-1">{{$message}}</i>
@@ -59,7 +59,7 @@
         </div> --}}
         <div class="my-2">
             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name="description" value="{{old('description')}}" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             @error('description')
                 <i class="text-danger mt-1">{{$message}}</i>
             @enderror

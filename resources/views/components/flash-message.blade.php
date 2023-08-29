@@ -5,6 +5,6 @@
     <script>
         setTimeout(() => {
             document.getElementById('elem-top-45').style.display='none';
-        }, 1000);
+        }, 3000);
     </script>
 @endif

@@ -30,13 +30,13 @@
         </div>
     </nav>
     {{-- VIEW LAYOUT --}}
-    <main>
+    <main class="mb-5">
         {{$slot}}
     </main>
 
     <footer>
         <x-flash-message/>
-        <nav class="navbar navbar-light bg-danger" style="--bs-bg-opacity: .5;">
+        <nav class="navbar navbar-light fixed-bottom" style="background-color: rgb(218, 107, 96);">
             <div class="container-fluid">
                 <a class="text-decoration-none text-center text-dark col-auto" href="#">Copyright &copy; 2022, Allright reserved </a>
                 <a href="/listings/create" type="button" class="btn btn-dark" >Post Job</a>
