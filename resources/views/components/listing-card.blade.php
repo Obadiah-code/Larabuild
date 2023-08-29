@@ -1,8 +1,8 @@
 @props(['listing'])
 
 <x-card class="bg-dark" style="--bs-bg-opacity: .3">
-    <div class="col-md-4">
-        <img src="{{asset('images/background.jpeg')}}" class="img-fluid rounded-start" alt="...">
+    <div class="col-md-4 justify-content-center d-flex">
+        <img src="{{ $listing->logo ? asset('storage/' . $listing->logo ) :asset('images/background.jpeg')}}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
         <div class="card-body">

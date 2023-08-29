@@ -2,7 +2,7 @@
 
 
     <div class="card mb-3">
-        <img src="{{asset('images/background.jpeg')}}" class="card-img-top" alt="...">
+        <img src="{{ $listing->logo ? asset('storage/' . $listing->logo ) :asset('images/background.jpeg')}}" class="card-img-top" style="max-height: 28rem" alt="...">
         <div class="card-body bg-danger" style="--bs-bg-opacity: .2;">
             <h5 class="card-title text-center">{{$listing['title']}}</h5>
             <x-listing-tags :tagsCsv="$listing->tags" />
