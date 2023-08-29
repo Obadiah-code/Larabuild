@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+
     <script src="{{ URL::asset('js/app.js') }}"></script>
+    <script src="{{ URL::asset('packages/bootstrap/dist/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ URL::asset('packages/@fortawesome/fontawesome-free/js/all.js') }}"></script>
     <title>Laragigs</title>
 </head>
 
@@ -32,6 +35,7 @@
     </main>
 
     <footer>
+        <x-flash-message/>
         <nav class="navbar navbar-light bg-danger" style="--bs-bg-opacity: .5;">
             <div class="container-fluid">
                 <a class="text-decoration-none text-center text-dark col-auto" href="#">Copyright &copy; 2022, Allright reserved </a>
