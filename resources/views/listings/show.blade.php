@@ -10,22 +10,23 @@
             <p class="card-text"><small class="text-muted">Last updated {{$listing['update_at']}} mins ago</small></p>
             <div class="g-0">
                 <a href="mailto:{{$listing['email']}}" class="my-3 row-lg col-12 mx-3 btn btn-danger">
-                    <i class="fa-solid fa-envelope"></i> Contact the Employer</button>
-                    <a role="button" href="{{$listing['website']}}" target="_blank"
+                    <i class="fa-solid fa-envelope"></i> Contact the Employer
+                </a>
+                <a role="button" href="{{$listing['website']}}" target="_blank"
                         class="my-3 row-lg col-12 mx-3 btn btn-dark" style="--bs-bg-opacity: .8">
-                        <i class="fa-solid fa-globe"></i> visit web site</a>
-                        <a role="button" href="/listings/{{$listing['id']}}/edit"
+                        <i class="fa-solid fa-globe"></i> visit web site
+                </a>
+                <a role="button" href="/listings/{{$listing['id']}}/edit"
                         class="my-3 row-lg col-12 mx-3 btn btn-primary" style="--bs-bg-opacity: .8">
                         <i class="fa-solid fa-pencil"></i> edit
-                    </a>
-                    <form method="POST" action="/listings/{{$listing->id}}">
+                </a>
+                <form method="POST" action="/listings/{{$listing->id}}">
                         @csrf
                         @method('DELETE')
                         <button
                             class="my-3 row-lg col-12 mx-3 btn btn-secondary" style="--bs-bg-opacity: .8">
                             <i class="fa-solid fa-trash"></i> Delete</button>
-
-                    </form>
+                </form>
             </div>
         </div>
     </div>
