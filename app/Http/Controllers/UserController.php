@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class UserController extends Controller
+class  UserController extends Controller
 {
     // Show register/Create form
     public function create(){
@@ -40,5 +40,10 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/')->with('message', 'You have been logged out!');
+    }
+
+    // Show login form
+    public function login(){
+        return view('users.login');
     }
 }
