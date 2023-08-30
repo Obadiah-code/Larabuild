@@ -31,7 +31,7 @@ destroy -- Delete listing
 // All listings
 Route::get('/', [ListingController::class, 'index']);
 
-// Single listing
+// Single Create form
 Route::get('/listings/create', [ListingController::class, 'create']);
 
 // Store listing data
@@ -52,8 +52,14 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // Show register create form
 Route::get('/register', [UserController::class, 'create']);
 
+// Create new User
+Route::post('/users', [UserController::class, 'store']);
+
 // Log User Out
 Route::post('/logout', [UserController::class, 'logout']);
 
 // Show login  form
 Route::get('/login', [UserController::class, 'login']);
+
+// Log In User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);

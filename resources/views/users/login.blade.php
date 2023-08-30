@@ -1,5 +1,5 @@
 <x-layout class="bg-danger" style="--bs-bg-opacity: .5;">
-    <form method="POST" action="/users/login" enctype="multipart/form-data" class="row g-3 border rounded-3 m-4 p-3"
+    <form method="POST" action="/users/authenticate" enctype="multipart/form-data" class="row g-3 border rounded-3 m-4 p-3"
         style="--bs-bg-opacity: .8; background-color: #f5e5e5">
         @csrf
         <div class="container text-center">

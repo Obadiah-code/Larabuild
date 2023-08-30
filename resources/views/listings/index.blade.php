@@ -1,5 +1,9 @@
 <x-layout>
-    @include('partials._hero')
+    @auth
+        
+    @else
+        @include('partials._hero')
+    @endauth
 
     <h1 class="mb-3">Lasted Listings</h1>
 
