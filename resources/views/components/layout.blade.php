@@ -49,7 +49,7 @@
         <x-flash-message/>
         <nav class="navbar navbar-light fixed-bottom" style="background-color: rgb(218, 107, 96);">
             <div class="container-fluid">
-                <a class="text-decoration-none text-center text-dark col-auto" href="#">Copyright &copy; 2022, Allright reserved </a>
+                <a class="text-decoration-none text-center text-dark col-auto" href="#">Copyright &copy; 2022, All right reserved </a>
                 <a href="/listings/create" type="button" class="btn btn-dark" >Post Job</a>
             </div>
         </nav>

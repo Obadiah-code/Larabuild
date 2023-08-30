@@ -3,18 +3,34 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
 {
     // Show all listings
-    public function index(){
+    public function index(Request $request): View{
+
+        /** @var Listing[] $listing */
+        $listings = DB::select('select * from listings');
+        $name = $request->input('name');
+        // ddd($request);
+        // Verify the request
+        if($request){
+
+        }
+
         return view('listings.index', [
+            'listings' => $listings
+        ]);
+
+/*         return view('listings.index', [
             'listings' => Listing::latest()->filter
             (request(['tag', 'search']))->simplePaginate(6)
-        ]);
+        ]); */
     }
 
     // Show single Listing
@@ -60,6 +76,12 @@ class ListingController extends Controller
 
     // Update Listing Data
     public function update(Request $request, Listing $listing): RedirectResponse{
+
+        // Make the logged is the owner
+        if($listing->user_id != auth()->id()){
+            abort(403, 'Unauthorised Action');
+        }
+
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required'],
@@ -83,11 +105,17 @@ class ListingController extends Controller
     
     // Delete Listing
     public function destroy(Listing $listing){
+
+        // Make the logged is the owner
+        if($listing->user_id != auth()->id()){
+            abort(403, 'Unauthorised Action');
+        }
+
         $listing->delete();
         return redirect('/')->with('message', 'Listing deleted successfully');
     }
 
-    public function manage(Request $request){
+    public function manage(){
         return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }
 }
