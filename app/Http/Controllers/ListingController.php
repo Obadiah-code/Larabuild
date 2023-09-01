@@ -16,11 +16,13 @@ class ListingController extends Controller
 
         /** @var Listing[] $listing */
         $listings = DB::select('select * from listings');
-        $name = $request->input('name');
         // ddd($request);
+        
         // Verify the request
-        if($request){
-
+        /** @var string $name */
+        $name = $request->input('name');
+        if($name){
+            $listings = DB::select("select * from listings where title like '%".$name."%'");
         }
 
         return view('listings.index', [

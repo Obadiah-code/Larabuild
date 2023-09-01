@@ -16,6 +16,8 @@
                         class="my-3 row-lg col-12 mx-3 btn btn-dark" style="--bs-bg-opacity: .8">
                         <i class="fa-solid fa-globe"></i> visit web site
                 </a>
+                @if ($listing->user_id == auth()->id())
+                    
                 <a role="button" href="/listings/{{$listing->id}}/edit"
                         class="my-3 row-lg col-12 mx-3 btn btn-primary" style="--bs-bg-opacity: .8">
                         <i class="fa-solid fa-pencil"></i> edit
@@ -27,6 +29,8 @@
                             class="my-3 row-lg col-12 mx-3 btn btn-secondary" style="--bs-bg-opacity: .8">
                             <i class="fa-solid fa-trash"></i> Delete</button>
                 </form>
+
+                @endif
             </div>
         </div>
     </div>
